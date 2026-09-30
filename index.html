@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e7f3ed">
+  <meta name="description" content="Nhớ — góc học tập của bạn. Ôn tập môn học với flashcard, trắc nghiệm và những phiên tập trung nhẹ nhàng.">
+  <title>Nhớ — Học một chút, nhớ lâu hơn</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='20' fill='%23244e40'/%3E%3Ctext x='13' y='46' font-size='45' font-family='Georgia' fill='%23dbefbd'%3En%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Đến nội dung chính</a>
+  <aside class="sidebar">
+    <a class="brand" href="./" aria-label="Nhớ — Trang chủ"><span class="brand-mark">n<span>✳</span></span><span>nhớ<span class="brand-dot">.</span></span></a>
+    <div class="workspace"><span class="workspace-icon" data-icon="sprout"></span><div>Góc học của bạn<small>Mỗi ngày một chút tiến bộ</small></div></div>
+    <div class="nav-caption">KHÔNG GIAN HỌC TẬP</div>
+    <nav aria-label="Điều hướng chính">
+      <button class="nav-item active" data-view="library"><span data-icon="grid"></span>Thư viện môn học</button>
+      <button class="nav-item" data-view="flashcards"><span data-icon="cards"></span>Thẻ ghi nhớ<span class="nav-tag">Flashcard</span></button>
+      <button class="nav-item" data-view="quiz"><span data-icon="check"></span>Luyện trắc nghiệm</button>
+      <button class="nav-item" data-view="saved"><span data-icon="bookmark"></span>Đã lưu</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="tiny-flower">✳</div><p>Không cần học tất cả.<br>Chỉ cần bắt đầu hôm nay.</p><span>MỘT CHÚT MỖI NGÀY</span></div>
+    <div class="profile"><span class="avatar">B</span><div>Bạn học chăm chỉ<small>Đang xây thói quen tốt 🌱</small></div><span class="online-dot" title="Lưu trên thiết bị"></span></div>
+  </aside>
+  <div class="page">
+    <header class="topbar"><div class="breadcrumb">Không gian học tập <span>/</span> <strong id="breadcrumb">Thư viện môn học</strong></div><div class="topbar-right"><span id="today"></span><span class="header-spark" data-icon="spark"></span></div></header>
+    <main id="main" tabindex="-1">
+      <div class="welcome"><div><p class="eyebrow">CHÀO BẠN, HÔM NAY MÌNH HỌC GÌ?</p><h1 id="page-title">Một góc nhỏ, nhiều điều hay<span>.</span></h1><p id="page-description">Gom kiến thức vào đây. Cùng biến việc ôn tập thành một thói quen dễ chịu.</p></div><button class="button primary" id="add-subject"><span data-icon="plus"></span>Thêm môn học</button></div>
+      <section class="hero" aria-label="Bắt đầu ôn tập"><div class="hero-copy"><span class="hero-badge"><span></span> CHẬM MÀ CHẮC, NHÉ!</span><h2>Học một chút.<br><em>Nhớ lâu hơn.</em></h2><p>Ôn lại điều đã học, khám phá điều chưa biết.<br>Mỗi tấm thẻ là một bước tiến nhỏ của bạn.</p><button class="button dark" id="start-learning">Bắt đầu ôn tập <span data-icon="arrow"></span></button><span class="hero-footnote">Một phiên ngắn cũng tạo nên khác biệt.</span></div><div class="hero-art" aria-hidden="true"><span class="art-orbit"></span><span class="art-spark spark-one">✳</span><span class="art-spark spark-two">✦</span><div class="back-card"></div><div class="art-card"><div class="art-card-top"><span>GHI NHỚ MỖI NGÀY</span><span>✦</span></div><div class="plant"><span class="stem"></span><span class="leaf leaf-one"></span><span class="leaf leaf-two"></span><span class="leaf leaf-three"></span><span class="leaf leaf-four"></span><span class="soil"></span></div><strong>Kiến thức cũng như cây.</strong><p>Chăm một chút, lớn mỗi ngày.</p><div class="art-card-line"></div><span class="art-card-bottom">KEEP GROWING</span></div><div class="floating-note"><span>✓</span> Bạn đang làm rất tốt!</div><span class="art-dots">· · ·<br>· · ·<br>· · ·</span></div></section>
+      <div class="content-columns"><section class="library" aria-labelledby="library-title"><div class="section-heading"><h2 id="library-title">Thư viện của bạn <span id="subject-count"></span></h2><span class="section-aside">Một nơi cho mọi kiến thức</span></div><div class="library-tools"><div class="filters" role="group" aria-label="Lọc môn học"><button class="filter active" data-category="all" aria-pressed="true">Tất cả</button><button class="filter" data-category="science" aria-pressed="false">Tự nhiên</button><button class="filter" data-category="language" aria-pressed="false">Ngôn ngữ</button><button class="filter" data-category="humanities" aria-pressed="false">Xã hội</button></div><label class="search"><span data-icon="search"></span><input id="search" type="search" placeholder="Tìm môn học…" aria-label="Tìm môn học"></label></div><div id="subject-grid" class="subject-grid"></div><div class="library-footer"><span data-icon="lock"></span>Không gian riêng của bạn. Nội dung được lưu trên trình duyệt này.</div></section>
+      <aside class="right-column"><section class="focus-panel"><div class="panel-label"><span data-icon="timer"></span>GÓC TẬP TRUNG<span class="small-dot"></span></div><h2>Một việc thôi,<br>thật trọn vẹn.</h2><p>Gác xao nhãng sang một bên,<br>dành 25 phút cho chính mình.</p><div id="timer" class="timer" role="timer" aria-label="Thời gian tập trung còn lại">25<span>:</span>00</div><div class="timer-actions"><button class="button focus-button" id="timer-toggle"><span data-icon="play"></span>Bắt đầu tập trung</button><button class="icon-button timer-reset" id="timer-reset" aria-label="Đặt lại đồng hồ"><span data-icon="reset"></span></button></div><div class="focus-foot"><span></span> Từng phút nhỏ, từng bước xa.</div></section><section class="tip-panel"><span class="tip-icon" data-icon="bulb"></span><p class="eyebrow">MẸO HỌC NHỎ</p><h3>Thử nhớ trước khi xem.</h3><p>Tự trả lời câu hỏi trước khi lật thẻ. Việc chủ động nhớ lại giúp kiến thức ở lại lâu hơn.</p><span class="tip-bottom">Học thông minh, nhớ bền lâu <span>↗</span></span></section></aside></div>
+      <footer class="page-footer"><span class="footer-brand">nhớ.</span><span>Học cho mình, lớn lên mỗi ngày.</span><span>Made for your curious mind <span class="footer-flower">✳</span></span></footer>
+    </main>
+  </div>
+  <dialog id="subject-dialog" aria-labelledby="subject-dialog-title"><form id="subject-form"><div class="dialog-header"><div><p class="eyebrow">THÊM MỘT ĐIỀU MUỐN HỌC</p><h2 id="subject-dialog-title">Môn học mới</h2></div><button type="button" class="icon-button" data-close aria-label="Đóng">✕</button></div><label>Tên môn học<input name="name" required maxlength="80" placeholder="Ví dụ: Sinh học"></label><label>Mô tả ngắn<input name="description" maxlength="200" placeholder="Bạn muốn khám phá điều gì?"></label><label>Nhóm môn học<select name="category"><option value="science">Khoa học tự nhiên</option><option value="language">Ngôn ngữ</option><option value="humanities">Khoa học xã hội</option><option value="other">Khác</option></select></label><p class="form-hint">Tạo môn học rồi thêm những thẻ ghi nhớ của riêng bạn.</p><button type="submit" class="button primary full-width">Tạo môn học <span data-icon="plus"></span></button></form></dialog>
+  <dialog id="study-dialog" class="study-dialog" aria-labelledby="study-title"><div id="study-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

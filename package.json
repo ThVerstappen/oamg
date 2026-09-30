@@ -1,0 +1,13 @@
+{
+  "name": "nho-study",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node tools.mjs dev",
+    "start": "node tools.mjs dev",
+    "build": "node tools.mjs build",
+    "preview": "node tools.mjs preview",
+    "test": "node --test model.test.mjs"
+  }
+}
